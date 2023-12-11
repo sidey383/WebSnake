@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="ru.sidey.snake.scene.MenuScene"
+            prefHeight="400.0" prefWidth="600.0">
+    <GridPane maxHeight="Infinity" maxWidth="Infinity">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="35"/>
+            <ColumnConstraints percentWidth="30"/>
+            <ColumnConstraints percentWidth="35"/>
+        </columnConstraints>
+        <ScrollPane
+                StackPane.alignment="CENTER"
+                GridPane.hgrow="always"
+                GridPane.vgrow="always"
+                GridPane.rowIndex="0"
+                GridPane.columnIndex="1">
+            <VBox fx:id="scrollBox">
+            </VBox>
+        </ScrollPane>
+        <StackPane
+                StackPane.alignment="CENTER"
+                GridPane.hgrow="always"
+                GridPane.vgrow="always"
+                GridPane.rowIndex="0"
+                GridPane.columnIndex="2">
+            <VBox>
+                <Button onAction="#pressMenu" text="menu "/>
+            </VBox>
+        </StackPane>
+    </GridPane>
+</AnchorPane>
