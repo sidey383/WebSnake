@@ -1,4 +1,4 @@
-package ru.sidey.snake.scene;
+package ru.sidey.snake.view;
 
 import javafx.fxml.FXMLLoader;
 
