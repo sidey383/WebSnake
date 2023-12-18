@@ -1,12 +1,10 @@
 package ru.sidey.snake.model;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import ru.sidey.snake.SnakesProto;
 import ru.sidey.snake.event.EventHandler;
 import ru.sidey.snake.event.EventManager;
 import ru.sidey.snake.model.event.GameListUpdateEvent;
-import ru.sidey.snake.network.AnnouncementNetworkReceiver;
+import ru.sidey.snake.network.impl.AnnouncementNetworkReceiver;
 import ru.sidey.snake.network.AnnouncementReceiver;
 import ru.sidey.snake.network.event.GameAnnouncementEvent;
 
@@ -19,7 +17,7 @@ import java.util.TimerTask;
 
 public class GameListener extends TimerTask {
 
-    Set<SnakesProto.GameMessage.AnnouncementMsg> msgs = new HashSet<>();
+    Set<SnakesProto.GameAnnouncement> msgs = new HashSet<>();
 
     private final AnnouncementReceiver receiver;
 
@@ -59,7 +57,7 @@ public class GameListener extends TimerTask {
     @EventHandler
     public void onAnnouncementMessage(GameAnnouncementEvent e) {
         synchronized (this) {
-            msgs.add(e.getAnnouncement());
+            msgs.addAll(e.getAnnouncement().getGamesList());
         }
     }
 

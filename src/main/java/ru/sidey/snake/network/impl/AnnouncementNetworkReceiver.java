@@ -1,4 +1,4 @@
-package ru.sidey.snake.network;
+package ru.sidey.snake.network.impl;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Parser;
@@ -7,6 +7,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import ru.sidey.snake.SnakesProto;
 import ru.sidey.snake.event.EventManager;
+import ru.sidey.snake.network.AnnouncementReceiver;
 import ru.sidey.snake.network.event.GameAnnouncementEvent;
 
 import java.io.IOException;

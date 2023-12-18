@@ -8,14 +8,14 @@ import java.util.Collections;
 
 public class GameListUpdateEvent extends Event {
 
-    private final Collection<SnakesProto.GameMessage.AnnouncementMsg> announcements;
+    private final Collection<SnakesProto.GameAnnouncement> announcements;
 
-    public GameListUpdateEvent(Collection<SnakesProto.GameMessage.AnnouncementMsg> announcements) {
+    public GameListUpdateEvent(Collection<SnakesProto.GameAnnouncement> announcements) {
         super(false);
         this.announcements = Collections.unmodifiableCollection(announcements);
     }
 
-    public Collection<SnakesProto.GameMessage.AnnouncementMsg> getAnnouncements() {
+    public Collection<SnakesProto.GameAnnouncement> getAnnouncements() {
         return announcements;
     }
 }

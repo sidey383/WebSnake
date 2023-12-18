@@ -1,9 +1,16 @@
 package ru.sidey.snake.model;
 
-public interface Model {
+public class Model implements ModelInterface {
 
-    void startListenGames();
+    GameListener listener = new GameListener();
 
-    void stopListenGames();
+    @Override
+    public void startListenGames() {
+        listener.start();
+    }
 
+    @Override
+    public void stopListenGames() {
+        listener.stop();
+    }
 }

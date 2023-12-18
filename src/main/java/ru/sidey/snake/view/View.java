@@ -11,6 +11,7 @@ import ru.sidey.snake.event.EventHandler;
 import ru.sidey.snake.event.EventManager;
 import ru.sidey.snake.view.event.PlayerKeyEvent;
 import ru.sidey.snake.view.event.WindowCloseEvent;
+import ru.sidey.snake.view.factory.GameCreateSceneFactory;
 import ru.sidey.snake.view.factory.MenuSceneFactory;
 
 import java.io.IOException;
@@ -24,7 +25,8 @@ public class View implements ViewInterface {
     private final Stage stage;
 
     List<SceneFactory<? extends AppScene>> sceneFactories = List.of(
-            new MenuSceneFactory()
+            new MenuSceneFactory(),
+            new GameCreateSceneFactory()
     );
 
     public View(Stage stage) {
@@ -33,7 +35,7 @@ public class View implements ViewInterface {
         stage.setOnCloseRequest(this::windowsClose);
         stage.setFullScreenExitHint("");
         stage.setResizable(true);
-        stage.setTitle("Piano tiles");
+        stage.setTitle("Web snake");
         try {
             stage.getIcons().add(new Image(Objects.requireNonNull(getClass().getResource("/images/icon.png")).toURI().toString()));
         } catch (URISyntaxException e) {

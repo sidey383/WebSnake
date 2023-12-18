@@ -4,6 +4,8 @@ import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
+import ru.sidey.snake.event.EventManager;
+import ru.sidey.snake.view.event.GameCreateMenuOpen;
 import ru.sidey.snake.view.menu.GameSelectPane;
 import ru.sidey.snake.view.menu.GameSelectUnit;
 
@@ -26,5 +28,6 @@ public class MenuAppScene extends MenuView {
 
     @FXML
     public void pressNewGame(ActionEvent actionEvent) {
+        EventManager.runEvent(new GameCreateMenuOpen());
     }
 }
