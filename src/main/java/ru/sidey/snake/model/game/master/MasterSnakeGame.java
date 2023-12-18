@@ -12,10 +12,7 @@ import ru.sidey.snake.network.ConnectedNode;
 import ru.sidey.snake.network.event.NodeDeathEvent;
 import ru.sidey.snake.network.impl.AddressIdentifier;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class MasterSnakeGame implements SnakeGame {
@@ -118,6 +115,11 @@ public class MasterSnakeGame implements SnakeGame {
     @Override
     public String name() {
         return name;
+    }
+
+    @Override
+    public Collection<Player> getPlayer() {
+        return Collections.unmodifiableCollection(players);
     }
 
     @Override

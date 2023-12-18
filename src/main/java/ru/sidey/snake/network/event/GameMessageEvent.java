@@ -3,8 +3,6 @@ package ru.sidey.snake.network.event;
 import ru.sidey.snake.event.Event;
 import ru.sidey.snake.network.impl.AddressIdentifier;
 
-import java.net.InetAddress;
-
 public abstract class GameMessageEvent<T> extends Event {
 
     private final AddressIdentifier address;
