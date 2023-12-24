@@ -90,7 +90,7 @@ public class NetworkNode implements ConnectedNode {
 
     private void sendInternal(SnakesProto.GameMessage message) {
         try {
-            socket.sendMessage(address, message.toBuilder().setMsgSeq(sequence.getAndIncrement()).build());
+            socket.sendMessage(address, message);
             updatePing();
         } catch (IOException e) {
             logger.log(Level.WARN, "Packet send error", e);

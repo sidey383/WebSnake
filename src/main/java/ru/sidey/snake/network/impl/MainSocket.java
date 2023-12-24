@@ -68,7 +68,8 @@ public class MainSocket implements Runnable, Connection {
                     AddressIdentifier id = new AddressIdentifier(packet.getAddress(), packet.getPort());
                     handler.handle(msg, id);
                     if (msg.getTypeCase() != SnakesProto.GameMessage.TypeCase.ACK &&
-                        msg.getTypeCase() != SnakesProto.GameMessage.TypeCase.DISCOVER) {
+                        msg.getTypeCase() != SnakesProto.GameMessage.TypeCase.DISCOVER &&
+                        msg.getTypeCase() != SnakesProto.GameMessage.TypeCase.JOIN) {
                         sendMessage(id, SnakesProto.GameMessage.newBuilder()
                                 .setSenderId(msg.getReceiverId())
                                 .setReceiverId(msg.getSenderId())
